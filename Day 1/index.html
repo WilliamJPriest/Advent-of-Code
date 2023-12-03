@@ -8,14 +8,13 @@
             finalTotal = 0
 
             const wordToNumber = {
-                'twone': '21',
                 'one': 'o1e',
-                'two': 't2o',
-                'three': 't3e',
-                'four': 'f4r',
-                'five': 'f5e',
-                'six': 's6x',
-                'seven': 's7n',
+                'two': '2ne',
+                'three': 'th3e',
+                'four': '4',
+                'five': '5e',
+                'six': '6',
+                'seven': '7n',
                 'eight': 'e8t',
                 'nine': 'n9e',
 
@@ -26,21 +25,24 @@
                 const pattern = new RegExp(Object.keys(wordToNumber).join('|'), 'gi');
 
 
-                    
+
                 // Use replace with the regular expression pattern
-                console.log(newData[i])
                 yo = newData[i].replace(pattern, match => wordToNumber[match.toLowerCase()] || match);
                 console.log(yo)
                 yo = yo.replace(/[a-zA-Z]/g, '');
                 console.log(yo)
 
-                newData[i] = yo; 
-                let yoo = newData[i].split("")
-                console.log(yoo)
-                newData[i]= yoo[0]+yoo.slice(-1)
-                finalTotal = finalTotal + Number(newData[i])
+                newData[i] = yo;
             }
             console.log(newData)
+            for(let i = 0; i< newData.length; i++){
+                let yoo = newData[i].split("")
+                newData[i]= yoo[0]+yoo.slice(-1)
+
+            }
+            for (let i =0; i < newData.length; i++){
+                finalTotal = finalTotal + Number(newData[i])
+            }
             console.log(finalTotal)
         </script>
     </head>
